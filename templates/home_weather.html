@@ -1,0 +1,20 @@
+{% extends 'base_layout.html' %}
+{% block content %}
+    <div id="app">
+        <select>
+            {% for city in cities %}
+            <option value="{{ city.name }}">{{ city.name }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <script>
+        new Vue({
+            // ovdje namjestimo "template" sintaksu
+            delimiters:['[,[[',']],]'],
+            el:'#app',
+            data:{
+                cities: '[]'
+            }
+        })
+    </script>
+{% endblock %}
